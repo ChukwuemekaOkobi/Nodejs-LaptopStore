@@ -1,7 +1,10 @@
 
+/**
+ *  Utitity module to keep resuable code 
+ * 
+ */
+
 const fs  = require('fs');
-
-
 
 
 function result(response, status, data,contentType = 'text/html')
