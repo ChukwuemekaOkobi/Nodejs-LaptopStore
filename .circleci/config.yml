@@ -1,0 +1,22 @@
+version: 2.1
+orbs:
+  node: circleci/node@4.7.0
+
+jobs:
+  buildLaptop:
+    docker:
+      - image: cimg/node:14.13.0s
+    steps:
+      - checkout
+      - run:
+          name: install dependencies
+          command: "node --version  && npm install"
+      - run:
+          name: run test
+          command: "npm run test" 
+
+
+workflows:
+  test-items:
+    jobs:
+      - buildLaptop:
