@@ -5,7 +5,7 @@ orbs:
 jobs:
   buildLaptop:
     docker:
-      - image: cimg/node:14.13.0s
+      - image: cimg/node:14.13.0
     steps:
       - checkout
       - run:
