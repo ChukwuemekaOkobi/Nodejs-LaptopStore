@@ -19,3 +19,12 @@ test("test subtraction ", ()=>{
 
     expect(result).toBe(19)
 });
+
+test("test string ", () =>{
+
+    const word = "sleep"; 
+
+    const count = word.length; 
+
+    expect(count).toBe(10);
+})
