@@ -22,7 +22,7 @@ test("test subtraction ", ()=>{
 
 test("test string ", () =>{
 
-    const word = "sleepsleep"; 
+    const word = "sleepsleepb"; 
 
     const count = word.length; 
 
