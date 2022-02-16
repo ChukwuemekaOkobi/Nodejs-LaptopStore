@@ -11,7 +11,7 @@ laptopData = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/data.json'
 
 //get data view async return promise 
 function getLaptopData(){
-
+     // added some comments
      return new Promise((resolve, reject) => {
         fs.readFile(path.join(__dirname,'../data/data.json'), 'utf-8', async (err,data) => {
             if(err)
