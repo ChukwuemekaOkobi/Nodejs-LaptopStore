@@ -1,13 +1,14 @@
 version: 2.1
 orbs:
-  node: circleci/node@4.7.0
+  heroku: circleci/heroku@1.2.5
+  # node: circleci/node@4.7.0
 
 jobs:
   buildLaptop:
     docker:
       - image: cimg/node:14.13.0
     steps:
-      - checkout
+      - Deploy App
       - run:
           name: install dependencies
           command: "node --version  && npm install"
@@ -20,3 +21,6 @@ workflows:
   test-items:
     jobs:
       - buildLaptop
+        filters:
+          branches: 
+            only: master
