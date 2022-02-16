@@ -110,7 +110,7 @@ async function returnFile(response,pathName)
         return utils.result(response,200,file,contentType); 
     } catch (error) {
         
-        console.log("error");
+        console.log(error);
     }
 
  

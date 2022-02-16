@@ -4,10 +4,10 @@ orbs:
   # node: circleci/node@4.7.0
 
 jobs:
-  buildLaptop:
-    docker:
+  buildLaptop:  # job name 
+    docker:     # Base Image for deployment
       - image: cimg/node:14.13.0
-    steps:
+    steps:   # step or commands that has to run in the Job
       - checkout
       - run:
           name: install dependencies
@@ -16,11 +16,13 @@ jobs:
           name: run test
           command: "npm run test" 
 
+  # can create more jobs 
 
+# pipeline workflows 
 workflows:
-  test-items:
+  LaptopStore-Deploy:
     jobs:
       - buildLaptop:
         filters:
           branches: 
-            only: master
+            only: master 
