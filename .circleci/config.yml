@@ -20,7 +20,7 @@ jobs:
 workflows:
   test-items:
     jobs:
-      - buildLaptop
+      - buildLaptop:
         filters:
           branches: 
             only: master
