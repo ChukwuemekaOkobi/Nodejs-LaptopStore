@@ -1,0 +1,30 @@
+#parallel workflows
+version: 2.1
+
+jobs:
+  build:  # job name 
+    docker:     # Base Image for deployment
+      - image: cimg/node:14.13.0
+    steps:   # step or commands that has to run in the Job
+      - checkout
+      - run:
+          name: install dependencies
+          command: "node --version  && npm install"
+      - run:
+          name: run test
+          command: "npm run test" 
+  build2: 
+    docker:    
+      - image: cimg/node:14.13.0
+    steps:   
+      - checkout
+      - run:
+          name: let me know 
+          command: "echo build 1 is done"
+
+workflows:
+  my-workflow:
+    jobs:
+      - build
+      - build2
+        
