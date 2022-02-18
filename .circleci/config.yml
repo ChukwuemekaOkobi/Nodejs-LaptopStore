@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   heroku: circleci/heroku@1.2.5
-  # node: circleci/node@4.7.0
+
 
 jobs:
   build:  # job name 
@@ -9,29 +9,21 @@ jobs:
       - image: cimg/node:14.13.0
     steps:   # step or commands that has to run in the Job
       - checkout
-      - run: echo "FSE Recitation" 
-
-# jobs:
-#   buildLaptop:  # job name 
-#     docker:     # Base Image for deployment
-#       - image: cimg/node:14.13.0
-#     steps:   # step or commands that has to run in the Job
-#       - checkout
-#       - run:
-#           name: install dependencies
-#           command: "node --version  && npm install"
-#       - run:
-#           name: run test
-#           command: "npm run test" 
+      - run:
+          name: install dependencies
+          command: "node --version  && npm install"
+      - run:
+          name: run test
+          command: "npm run test" 
 
   # can create more jobs 
 
 
-# pipeline workflows 
-# workflows:
-#   LaptopStore-Deploy:
-#     jobs:
-#       - buildLaptop:
-#         filters:
-#           branches: 
-#             only: master 
+pipeline workflows 
+workflows:
+  LaptopStore-Deploy:
+    jobs:
+      - build:
+        filters:
+          branches: 
+            only: master 
