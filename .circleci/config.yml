@@ -1,7 +1,4 @@
 version: 2.1
-# orbs:
-#   heroku: circleci/heroku@1.2.5
-
 
 jobs:
   build:  # job name 
@@ -15,25 +12,6 @@ jobs:
       - run:
           name: run test
           command: "npm run test" 
-  build2:  # job name 
-    docker:     # Base Image for deployment
-      - image: cimg/node:14.13.0
-    steps:   # step or commands that has to run in the Job
-      - checkout
-      - run:
-          name: let me know 
-          command: "echo build 1 is done"
-  
 
 
-# pipeline workflows 
-workflows:
-  heroku-deploy:
-    jobs:
-      - build:
-        filters:
-          branches: 
-            only: master 
-      - build2:
-          requires:
-          - build
+        
