@@ -1,4 +1,7 @@
 version: 2.1
+# orbs:
+#   heroku: circleci/heroku@1.2.5
+
 
 jobs:
   build:  # job name 
@@ -20,12 +23,17 @@ jobs:
       - run:
           name: let me know 
           command: "echo build 1 is done"
+  
 
-# workflows:
-#   my-workflow:
-#     jobs:
-#       - build
-#       - build2:
-#           requires:
-#           - build
-        
+
+# pipeline workflows 
+workflows:
+  heroku-deploy:
+    jobs:
+      - build:
+        filters:
+          branches: 
+            only: master 
+      - build2:
+          requires:
+          - build
