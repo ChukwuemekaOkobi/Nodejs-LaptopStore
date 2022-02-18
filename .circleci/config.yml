@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  heroku: circleci/heroku@1.2.5
 
 jobs:
   build:  # job name 
@@ -12,20 +14,14 @@ jobs:
       - run:
           name: run test
           command: "npm run test" 
-  build2: 
-    docker:    
-      - image: cimg/node:14.13.0
-    steps:   
-      - checkout
-      - run:
-          name: let me know 
-          command: "echo build 1 is done"
 
 workflows:
   my-workflow:
     jobs:
       - build
-      - build2
+        filters:
+          branches: 
+            only: master 
 
 
         
