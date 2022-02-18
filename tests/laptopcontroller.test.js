@@ -2,7 +2,7 @@
 test("test addition", ()=>{
 
     var a = 34; 
-    var b = 189; 
+    var b = 15; 
 
     const result = a + b; 
 
