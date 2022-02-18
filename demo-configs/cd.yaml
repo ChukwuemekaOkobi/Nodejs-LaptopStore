@@ -1,0 +1,28 @@
+version: 2.1
+orbs:
+  heroku: circleci/heroku@1.2.5
+
+
+jobs:
+  build:  # job name 
+    docker:     # Base Image for deployment
+      - image: cimg/node:14.13.0
+    steps:   # step or commands that has to run in the Job
+      - checkout
+      - run:
+          napushme: install dependencies
+          command: "node --version  && npm install"
+      - run:
+          name: run test
+          command: "npm run test" 
+
+
+
+# pipeline workflows 
+workflows:
+  heroku-deploy:
+    jobs:
+      - build:
+        filters:
+          branches: 
+            only: master
