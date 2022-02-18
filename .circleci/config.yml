@@ -16,12 +16,12 @@ jobs:
           command: "npm run test" 
 
 workflows:
-  my-workflow:
+  LaptopStore-Deploy:
     jobs:
-      - build
+      - build:
         filters:
           branches: 
-            only: master 
+            only: master
 
 
         
