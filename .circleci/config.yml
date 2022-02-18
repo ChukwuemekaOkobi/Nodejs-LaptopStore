@@ -23,7 +23,7 @@ jobs:
       - checkout
       - run:
           name: install dependencies
-          command: "node --version"
+          command: "node --version && npm install"
       - run:
           name: run test
           command: "npm run test" 
