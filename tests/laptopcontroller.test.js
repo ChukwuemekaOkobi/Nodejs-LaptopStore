@@ -6,7 +6,7 @@ test("test addition", ()=>{
 
     const result = a + b; 
 
-    expect(result).toBe(49)
+    expect(result).toBe(493)
 });
 
 
