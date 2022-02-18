@@ -2,7 +2,6 @@ version: 2.1
 orbs:
   heroku: circleci/heroku@1.2.5
 
-
 jobs:
   build:  # job name 
     docker:     # Base Image for deployment
@@ -16,14 +15,13 @@ jobs:
           name: run test
           command: "npm run test" 
 
-  # can create more jobs 
-
-
-# pipeline workflows 
 workflows:
   LaptopStore-Deploy:
     jobs:
       - build:
         filters:
           branches: 
-            only: master 
+            only: master
+
+
+        
