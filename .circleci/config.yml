@@ -28,10 +28,10 @@ jobs:
 
 
 # pipeline workflows 
-# workflows:
-#   LaptopStore-Deploy:
-#     jobs:
-#       - buildLaptop:
-#         filters:
-#           branches: 
-#             only: master 
+workflows:
+  LaptopStore-Deploy:
+    jobs:
+      - buildLaptop:
+        filters:
+          branches: 
+            only: master 
