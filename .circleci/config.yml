@@ -3,7 +3,7 @@ orbs:
   heroku: circleci/heroku@1.2.5
 
 jobs:
-  build:  # job name 
+  my-new-job:  # job name 
     docker:     # Base Image for deployment
       - image: cimg/node:14.13.0
     steps:   # step or commands that has to run in the Job
@@ -16,12 +16,9 @@ jobs:
           command: "npm run test" 
 
 workflows:
-  LaptopStore-Deploy:
+  my-workflow:
     jobs:
-      - build:
+      - my-new-job:
         filters:
           branches: 
             only: master
-
-
-        
