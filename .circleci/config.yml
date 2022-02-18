@@ -4,7 +4,7 @@ orbs:
   node: circleci/node@4.7.0
 
 jobs:
-  my-new-job:  # job name 
+  buildLaptop:  # job name 
     docker:     # Base Image for deployment
       - image: cimg/node:14.13.0
     steps:   # step or commands that has to run in the Job
