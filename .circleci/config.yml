@@ -12,8 +12,17 @@ jobs:
       - run:
           name: run test
           command: "npm run test" 
+  my-next-job: 
+    docker:    
+      - image: cimg/node:14.13.0
+    steps:   
+      - checkout
+      - run:
+          name: let me know 
+          command: "echo my-new-job is done"
 
 workflows:
   my-workflow:
     jobs:
       - my-new-job
+      - my-next-job
