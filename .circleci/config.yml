@@ -25,4 +25,6 @@ workflows:
   my-workflow:
     jobs:
       - my-new-job
-      - my-next-job
+      - my-next-job:
+          requires:
+          - my-new-job
