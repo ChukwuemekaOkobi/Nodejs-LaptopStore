@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
-  heroku: circleci/heroku@1.2.5
-  # node: circleci/node@4.7.0
+  #heroku: circleci/heroku@1.2.5
+  node: circleci/node@4.7.0
 
 jobs:
   buildLaptop:  # job name 
@@ -16,14 +16,31 @@ jobs:
           name: run test
           command: "npm run test" 
 
+  buildSomething: 
+    docker:     # Base Image for deployment
+      - image: cimg/node:14.13.0
+    steps:   # step or commands that has to run in the Job
+      - checkout
+      - run:
+          name: install dependencies
+          command: "node --version"
+      - run:
+          name: run test
+          command: "npm run test" 
+
   # can create more jobs 
 
 
 # pipeline workflows 
 workflows:
-  LaptopStore-Deploy:
+  LaptopStore-Deploy: #work flow name
     jobs:
+      - buildSomething:
+        filters:
+          branches: 
+            only: master
       - buildLaptop:
         filters:
           branches: 
-            only: master 
+            only: master
+        requires: buildSomething 
