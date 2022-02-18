@@ -1,6 +1,6 @@
 version: 2.1
-orbs:
-  heroku: circleci/heroku@1.2.5
+# orbs:
+#   heroku: circleci/heroku@1.2.5
 
 
 jobs:
@@ -20,10 +20,10 @@ jobs:
 
 
 # pipeline workflows 
-workflows:
-  LaptopStore-Deploy:
-    jobs:
-      - build:
-        filters:
-          branches: 
-            only: master 
+# workflows:
+#   LaptopStore-Deploy:
+#     jobs:
+#       - build:
+#         filters:
+#           branches: 
+#             only: master 
