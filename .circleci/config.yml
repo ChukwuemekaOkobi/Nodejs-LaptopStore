@@ -12,3 +12,8 @@ jobs:
       - run:
           name: run test
           command: "npm run test" 
+
+workflows:
+  my-workflow:
+    jobs:
+      - my-new-job
