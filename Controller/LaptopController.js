@@ -116,7 +116,38 @@ async function returnFile(response,pathName)
  
 }
 
-module.exports = { getLaptops, getlaptop, pageNotFound, returnFile}
+function Sum (a , b){
+    return a + b; 
+}
+
+function SubStract (a , b){
+    return a -b; 
+}
+
+function GetGrade ( score ){
+
+    if(score  > 80){
+        return  "A"; 
+    }
+    else if(score > 64 ) 
+    {
+     
+        return "B";
+    }
+    else {
+        return 'F';
+    }
+    
+}
+
+function Status(user){
+    if(user === "A"){
+        return "online";
+    }
+    else
+      return "offline";
+}
+module.exports = { getLaptops, getlaptop, pageNotFound, returnFile, Status, Sum, SubStract, GetGrade }
 
 
 

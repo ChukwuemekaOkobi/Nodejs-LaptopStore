@@ -1,30 +1,12 @@
+const controller = require('../Controller/LaptopController');
 
-test("test addition", ()=>{
 
-    var a = 34; 
-    var b = 15; 
 
-    const result = a + b; 
+test('test the sum function', () => {
 
-    expect(result).toBe(49)
+    var expected = 45;
+
+    var actual = controller.Sum(30 , 15);  
+
+    expect(actual).toBe(expected);
 });
-
-
-test("test subtraction ", ()=>{
-
-    var a = 34; 
-    var b = 15; 
-
-    const result = a - b; 
-
-    expect(result).toBe(19)
-});
-
-test("test string ", () =>{
-
-    const word = "sleepsleep"; 
-
-    const count = word.length; 
-
-    expect(count).toBe(10);
-})
